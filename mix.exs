@@ -14,7 +14,8 @@ defmodule Overseer.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger,
+    [mod: {Overseer, []},
+     applications: [:logger,
                     :postgrex,
                     :ecto]]
   end
@@ -30,6 +31,8 @@ defmodule Overseer.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:postgrex, ">= 0.0.0"},
-     {:ecto, "~> 1.1"}]
+     {:ecto, "~> 1.1"},
+     {:cowboy, "~> 1.0.0"},
+     {:plug, "~> 1.0"}]
   end
 end
